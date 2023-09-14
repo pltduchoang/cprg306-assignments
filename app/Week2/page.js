@@ -1,11 +1,14 @@
 import Link from "next/link";
-import EventList from "./event-list";
+import StudentInfo from "../StudentInfo/StudentInfo";
+
 export default function Page() {
     return (
-        <main>
-      <h1>Week 2</h1>
+    <main>
       <Link href="/">Home</Link>
-      <EventList/>
+      <h1>My Shopping List</h1>
+      <br/>
+
+      <StudentInfo/>
     </main>
     )
 }
