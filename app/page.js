@@ -1,6 +1,6 @@
 
 import Link from 'next/link'
-import StudentInfo from './StudentInfo/StudentInfo';
+import StudentInfo from './studentinfo/StudentInfo';
 
 export default function Home() {
   return (
