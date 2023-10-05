@@ -52,7 +52,7 @@ export default function AddItem()
                     value={name}
                     placeholder="Item Name"
                     className="w-full p-1 rounded-md"></input>
-                    <div className="flex flex-row p-1 items-stretch w-max">
+                    <div className="flex flex-row p-1 justify-between w-max focus:border-green-800">
                         <input
                         type="number"
                         name="itemQuantity"
@@ -61,14 +61,14 @@ export default function AddItem()
                         max="99"
                         value={quantity}
                         onChange={handleQuantityChange}
-                        className="m-2 rounded-md p-1 h-9 flex1"></input>
+                        className="m-2 rounded-md p-1 h-9 flex1 w-32"></input>
                         <select
                         name="itemCategory"
                         id="itemCategory"
                         onChange={handleCategoryChange}
                         value={category}
                         placeholder="Category"
-                        className="m-2 rounded-md p-1 h-9 flex-1"
+                        className="m-2 rounded-md p-1 h-9 flex-1 w-52"
                         >
                             {categoryList.map((category, index) => (
                                 <option key={index} value={category}>
