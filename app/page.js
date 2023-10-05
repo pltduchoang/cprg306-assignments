@@ -14,19 +14,19 @@ export default function Home() {
           <StudentInfo/>
         </div>
         
-        <Link href="/Week2">
+        <Link href="/week2">
           <div className="bg-emerald-600 text-white p-4 my-4 rounded-lg text-center hover:bg-emerald-400 hover:underline">
             To Week 2 Page
           </div>
         </Link>
 
-        <Link href="/Week3">
+        <Link href="/week3">
           <div className="bg-emerald-600 text-white p-4 my-4 rounded-lg text-center hover:bg-emerald-400 hover:underline">
             To Week 3 Page
           </div>
         </Link>
 
-        <Link href="/Week4">
+        <Link href="/week4">
           <div className="bg-emerald-600 text-white p-4 my-4 rounded-lg text-center hover:bg-emerald-400 hover:underline">
             To Week 4 Page
           </div>
