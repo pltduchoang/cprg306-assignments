@@ -39,9 +39,9 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link href="/week5">
+        <Link href="/week6">
           <div className="bg-emerald-600 text-white p-4 my-4 rounded-lg text-center hover:bg-emerald-400 hover:underline">
-            To Week 5 Page
+            To Week 6 Page
           </div>
         </Link>
 

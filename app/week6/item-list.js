@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
-import itemList from "./items.json";
 import Item from "./item";
 
-export default function ItemList() {
-    const [sortCriteria, setSortCriteria] = useState('');
+export default function ItemList({itemList, onItemDeleted}) {
+    const [sortCriteria, setSortCriteria] = useState('name');
 
     let workingList = itemList;
 
+    const handleDelete = (item) => {onItemDeleted(item);};
     return(
         <main>
             <div className="flex flex-row w-full p-1">
@@ -33,13 +33,12 @@ export default function ItemList() {
             {sortCriteria !== '' &&
                 <ul>
                 {workingList.sort((a, b) => a[sortCriteria].localeCompare(b[sortCriteria])).map((item) => (
-                    <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
-                ))}
-            </ul>}
-            {sortCriteria === '' &&
-                <ul>
-                {itemList.map((item) => (
-                    <Item key={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
+                    <Item 
+                        key={item.id} 
+                        name={item.name} 
+                        quantity={item.quantity} 
+                        category={item.category}
+                        onItemDeleted={handleDelete}/>
                 ))}
             </ul>}
         </main>
