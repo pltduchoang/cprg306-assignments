@@ -9,7 +9,7 @@ export default function Item({name, quantity, category, onItemDeleted})
                 <p className="text-left">Quantity: {quantity}</p>
                 <p className="text-left">Category: {category}</p>
                 <button 
-                className="bg-emerald-600 text-white p-4 my-4 rounded-lg text-center w-60 hover:bg-emerald-400 hover:underline"
+                className="bg-green-600 text-white p-4 my-4 rounded-lg text-center w-60 hover:bg-green-700 hover:underline"
                 onClick={handleClick}>Delete</button>
             </div>
         </li>
