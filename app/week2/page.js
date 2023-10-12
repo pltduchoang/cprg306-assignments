@@ -1,6 +1,6 @@
 import Link from "next/link";
-import StudentInfo from "../studentinfo/studentinfo";
 import HomeButton from "../homebutton";
+import StudentInfo from "./studentinfo";
 
 export default function Page() {
     return (

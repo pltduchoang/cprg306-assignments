@@ -1,6 +1,7 @@
 
 import Link from 'next/link'
-import StudentInfo from './studentinfo/StudentInfo'
+import StudentInfo from './week2/studentinfo'
+
 
 export default function Home() {
   return (
