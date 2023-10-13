@@ -34,7 +34,7 @@ export default function ItemList({itemList, onItemDeleted}) {
             </div>
             {sortCriteria !== '' && (
                 <AnimatePresence>
-                    <motion.ul initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}} exit={{opacity:0}} className="flex flex-col w-full">
+                    <motion.ul initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}} exit={{opacity:0}} className="flex w-full flex-col">
                     {workingList.sort((a, b) => a[sortCriteria].localeCompare(b[sortCriteria])).map((item) => (
                         <motion.li
                             key={item.id}
