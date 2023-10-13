@@ -1,13 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import Item from "./item";
+import {AnimatePresence, motion} from "framer-motion";
 
 export default function ItemList({itemList, onItemDeleted}) {
     const [sortCriteria, setSortCriteria] = useState('name');
 
     let workingList = itemList;
 
-    const handleDelete = (item) => {onItemDeleted(item);};
+    const handleDelete = (name) => {onItemDeleted(name);};
+
     return(
         <main>
             <div className="flex flex-row w-full p-1">
@@ -30,17 +32,28 @@ export default function ItemList({itemList, onItemDeleted}) {
                     <p>Grouped Category</p>
                 </span>
             </div>
-            {sortCriteria !== '' &&
-                <ul>
-                {workingList.sort((a, b) => a[sortCriteria].localeCompare(b[sortCriteria])).map((item) => (
-                    <Item 
-                        key={item.id} 
-                        name={item.name} 
-                        quantity={item.quantity} 
-                        category={item.category}
-                        onItemDeleted={handleDelete}/>
-                ))}
-            </ul>}
-        </main>
+            {sortCriteria !== '' && (
+                <AnimatePresence>
+                    <motion.ul initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}} exit={{opacity:0}} className="flex flex-col w-full">
+                    {workingList.sort((a, b) => a[sortCriteria].localeCompare(b[sortCriteria])).map((item) => (
+                        <motion.li
+                            key={item.id}
+                            initial={{opacity: 0, x: -50}}
+                            animate={{opacity: 1, x: 0}}
+                            transition={{duration: 0.5, x:50}}
+                            exit={{opacity:0}} >
+                            <Item 
+                                key={item.id} 
+                                name={item.name} 
+                                quantity={item.quantity} 
+                                category={item.category}
+                                onItemDeleted={handleDelete}/>
+                        </motion.li>
+                       
+                    ))}
+                    </motion.ul>
+                </AnimatePresence>
+            )}
+        </main>           
     );
 }
