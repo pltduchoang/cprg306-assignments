@@ -5,7 +5,7 @@ import StudentInfo from './week2/studentinfo'
 
 export default function Home() {
 
-  const week = ["week2", "week3", "week4", "week5", "week6", "week7", "week8"]
+  const week = ["week2", "week3", "week4", "week5", "week6", "week7", "week8", "week10"]
   return (
     <main className="flex flex-col min-h-screen p-24 items-center bg-emerald-100">
       <div>
